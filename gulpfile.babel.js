@@ -1,7 +1,7 @@
 'use strict';
 
 import gulp from 'gulp';
-import plugins from 'gulp-load-plugins';
+import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import autoprefixer from 'autoprefixer';
 import pngquant from 'imagemin-pngquant';
@@ -13,6 +13,7 @@ const BROWSERSYNC_RELOAD_DELAY = 1000;
 const bootstrapPath = './node_modules/bootstrap/scss/';
 const fontAwesomePath = './node_modules/font-awesome/scss/'
 const uikitPath = './node_modules/uikit/src/less/'
+const plugins = gulpLoadPlugins();
 const postCssPlugins = [
   autoprefixer({
     browsers: ['last 2 versions']
@@ -111,7 +112,7 @@ gulp.task('serve:node', cb => {
 });
 
 // Using browser-sync for watching changes in our files
-gulp.task('serve', ['serve:node'], () => {
+gulp.task('sync', ['serve:node'], () => {
   var port = 3000;
   // for more browser-sync config options http://www.browsersync.io/docs/options/
   browserSync({
@@ -147,4 +148,4 @@ gulp.task('watch', () => {
 });
 
 // Default task
-gulp.task('default', ['watch', 'serve']);
+gulp.task('default', ['watch', 'sync']);
