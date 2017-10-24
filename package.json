@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "server": "gulp"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -21,18 +22,23 @@
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "bootstrap": "4.0.0-beta.2",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
+    "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^3.4.0",
     "gulp-less": "^3.3.2",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-postcss": "^7.0.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
-    "imagemin-pngquant": "^5.0.1"
+    "imagemin-pngquant": "^5.0.1",
+    "run-sequence": "^2.2.0",
+    "uikit": "^3.0.0-beta.31"
   }
 }
