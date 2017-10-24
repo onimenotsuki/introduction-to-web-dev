@@ -143,8 +143,8 @@ gulp.task('sync', ['serve:node'], () => {
 gulp.task('watch', () => {
   gulp.watch('public/images/**/*', ['build:img']);
   gulp.watch('public/javascripts/**/*.js', ['build:js']);
-  gulp.watch('public/stylesheets/**/*.scss', ['build:scss']);
-  gulp.watch('public/stylesheets/**/*.less', ['build:less']);
+  gulp.watch('public/stylesheets/scss/**/*.scss', ['build:scss']);
+  gulp.watch('public/stylesheets/less/**/*.less', ['build:less']);
 });
 
 // Default task
