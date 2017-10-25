@@ -1,27 +1,53 @@
 <nav class="uk-navbar-container" uk-navbar>
   <div class="uk-navbar-left">
+    <a class="uk-navbar-item uk-logo">
+      <img alt="" src="/img/logo.svg" width="60px" />
+    </a>
+  </div>
 
-    <a class="uk-navbar-item uk-logo" href="#">Logo</a>
-
+  <div class="uk-navbar-right uk-visible@s">
     <ul class="uk-navbar-nav">
       <li>
         <a href="#">
-          <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
-          Features
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Servicios
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Contacto
         </a>
       </li>
     </ul>
+  </div>
 
-    <div class="uk-navbar-item">
-      <div>Some <a href="#">Link</a></div>
+  <!-- Menu icon only for small devices -->
+  <div class="uk-navbar-right uk-hidden@s">
+    <div class="uk-navbar-nav">
+      <li>
+        <a href="#offcanvas-slide"
+           uk-toggle
+           uk-icon="icon: menu; ratio: 1.5"></a>
+      </li>
     </div>
+  </div>
 
-    <div class="uk-navbar-item">
-      <form>
-        <input class="uk-input uk-form-width-small" type="text" placeholder="Input">
-        <button class="uk-button uk-button-default">Button</button>
-      </form>
+  <!-- Offcanvas menu with links -->
+  <div id="offcanvas-slide" uk-offcanvas>
+    <div class="uk-offcanvas-bar">
+      <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a href="#">Active</a></li>
+        <li><a href="#">Item</a></li>
+        <li class="uk-nav-header">Header</li>
+        <li><a href="#">Item</a></li>
+        <li><a href="#">Item</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a href="#">Item</a></li>
+      </ul>
     </div>
-
   </div>
 </nav>
