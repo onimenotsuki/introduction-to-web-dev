@@ -10,6 +10,51 @@
 
 /* Custom elements and misc */
 .ci {
+  &-quote-wrapper {
+    .ci-quote-body {
+      .ci-paragraph {
+        font-size: 0.98em;
+      }
+    }
+
+    .ci-quote-footer {
+      .ci-quote-img {
+        img {
+          width: 60px;
+          border-radius: 30px;
+        }
+
+        margin-right: 15px;
+      }
+
+      .ci-quote-person {
+        .ci-quote-name {
+          color: $ci-blue-darker;
+        }
+
+        .ci-quote-job {
+          margin-top: -5px;
+          font-size: 0.9em;
+          color: $ci-gray-blue;
+        }
+
+        width: 200px;
+      }
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    &:first-child {
+      margin-top: 20px;
+    }
+
+    width: 100%;
+    margin-top: 40px;
+  }
+
   &-bar {
     display: inline-block;
     content: " ";
