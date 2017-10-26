@@ -3,6 +3,7 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
+import del from 'del';
 import autoprefixer from 'autoprefixer';
 import pngquant from 'imagemin-pngquant';
 import nodemon from 'gulp-nodemon';
@@ -145,6 +146,21 @@ gulp.task('watch', () => {
   gulp.watch('public/javascripts/**/*.js', ['build:js']);
   gulp.watch('public/stylesheets/scss/**/*.scss', ['build:scss']);
   gulp.watch('public/stylesheets/less/**/*.less', ['build:less']);
+});
+
+// Clean assets
+gulp.task('clean', () => {
+  del('dist');
+});
+
+// Building asssets for production
+gulp.task('build:bt', cb => {
+  runSequence('clean', ['build:img', 'build:fonts', 'build:js'], 'build:scss', cb);
+});
+
+// Assets for uikit
+gulp.task('build:uk', cb => {
+  runSequence('clean', ['build:img', 'build:fonts', 'build:js'], 'build:less', cb);
 });
 
 // Default task
