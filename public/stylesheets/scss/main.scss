@@ -70,12 +70,22 @@
 }
 
 /* Typography */
+/* Using bootstrap default nav-item anchor*/
+/* for change color and hover color */
+.nav-item a {
+  &:hover {
+    color: $ci-blue;
+  }
+
+  color: $white;
+}
+
 .ci {
   &-paragraph {
     /* Utilizamos la función at-root de sass para mapear el elemento */
     /* .ci-paragraph como hijo de .ci-section.ci-info */
     @at-root .ci-section.ci-info #{&} {
-    color: white;
+    color: $white;
   }
 
     color: $ci-gray-blue;
@@ -86,7 +96,7 @@
     /* Utilizamos la función at-root de sass para mapear el elemento */
     /* .ci-section-title como hijo de .ci-section.ci-info */
     @at-root .ci-section.ci-info #{&} {
-    color: white;
+    color: $white;
   }
 
     color: $ci-blue-dark;
@@ -117,6 +127,11 @@
       background-color: $ci-gray-blue-light;
     }
 
+    &.ci-footer {
+      background-color: $ci-blue-darker;
+      padding: 10px 0;          /* Overwriting padding section */
+    }
+
     padding: 40px 0;
   }
 }
@@ -130,6 +145,17 @@
   &-img-reponsive {
     min-width: 100px !important;
     max-height: 100px !important;
+  }
+
+  &-logo {
+    width: 100px;
+  }
+  &-paragraph {
+    @at-root .ci-footer #{&} {
+      margin-top: -30px;
+      font-size: 10px;
+      color: $white;
+    }
   }
 }
 
