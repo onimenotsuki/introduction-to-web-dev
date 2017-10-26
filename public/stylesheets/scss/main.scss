@@ -129,7 +129,7 @@
 
     &.ci-footer {
       background-color: $ci-blue-darker;
-      padding: 10px 0;          /* Overwriting padding section */
+      padding: 20px 0;          /* Overwriting padding section */
     }
 
     padding: 40px 0;
@@ -152,10 +152,42 @@
   }
   &-paragraph {
     @at-root .ci-footer #{&} {
-      margin-top: -30px;
-      font-size: 10px;
-      color: $white;
+    font-size: 10px;
+    color: $white;
+  }
+  }
+
+  &-icon-wrapper {
+    display: block;
+    margin: auto;
+
+    &:hover use.logo {
+      cursor: pointer;
+      --body-color: $white;
     }
+
+  }
+
+  &-icon {
+    /* Solamente aplica cuando es hijo de .ci-footer */
+    @at-root .ci-footer #{&} {
+    use.logo {
+      --z-color: $white;
+    }
+
+    width: 80px;
+  }
+
+    /* Estilos personalizados para logo */
+    /* --body-color - Variable para cambiar el color de las barras y lineas en el logo */
+    /* --z-color - Variable para cambiar el color de la z en el logo */
+    use.logo {
+      --body-color: $ci-blue;
+      --z-color: $ci-blue-darker;
+    }
+
+    /* Solamente aplica en el navbar */
+    width: 60px;
   }
 }
 
