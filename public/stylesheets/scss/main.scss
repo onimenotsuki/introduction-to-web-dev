@@ -11,26 +11,26 @@
 /* Typography */
 .ci {
   &-paragraph {
-    color: $ci-blue-medium;
-    font-size: 0.8em;
+    color: $ci-gray-blue;
+    font-size: 0.9em;
   }
 
   &-section-title {
     color: $ci-blue-dark;
   }
+
+  &-card-title {
+    small {
+      margin-left: 8px;
+      font-size: 0.7em;
+      color: $ci-blue;
+    }
+    color: $ci-blue-darker;
+  }
 }
-
-/* .ci-paragraph { */
-/*   color: $ci-blue-medium; */
-/*   font-size: 0.8em; */
-/* } */
-
-/* .ci-section-title { */
-/*   color: $ci-blue-dark; */
-/* } */
 
 /* Images */
 .ci-img-reponsive {
-  margin: auto;
-  text-align: center;
+  min-width: 100px !important;
+  max-height: 100px !important;
 }
