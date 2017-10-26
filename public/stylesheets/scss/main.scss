@@ -113,6 +113,10 @@
       background-color: $ci-blue-medium;
     }
 
+    &.ci-subscription {
+      background-color: $ci-gray-blue-light;
+    }
+
     padding: 40px 0;
   }
 }
