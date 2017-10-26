@@ -8,8 +8,58 @@
   margin-top: 40px;
 }
 
+/* Tables */
+.ci {
+  &-course-icons {
+    .nav {
+      &::-webkit-scrollbar {
+        height: 0;
+      }
+
+      .nav-item {
+        .fa {
+          & + .ci-icon-text {
+            position: relative;
+            top: -5px;
+          }
+
+          color: $ci-blue !important;
+          margin-right: 10px;
+        }
+      }
+
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+    }
+  }
+}
+
 /* Custom elements and misc */
 .ci {
+  &-carousel-indicators.carousel-indicators {
+    li {
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.active {
+        background-color: $ci-blue;
+      }
+
+      background-color: $white;
+      list-style-type: none;
+      height: 20px !important;
+      width: 20px !important;
+      border-radius: 50%;
+      float: left;
+      margin: 10px;
+      margin-bottom: 40px;
+    }
+
+    position: relative;
+    display: inline-block;
+  }
+
   &-quote-wrapper {
     .ci-quote-body {
       .ci-paragraph {
@@ -92,6 +142,12 @@
     font-size: 0.9em;
   }
 
+  &-title {
+    color: $white;
+    text-align: center;
+    font-size: 3rem;
+  }
+
   &-section-title {
     /* Utilizamos la función at-root de sass para mapear el elemento */
     /* .ci-section-title como hijo de .ci-section.ci-info */
@@ -114,6 +170,22 @@
 
 /* Sections and layout */
 .ci {
+  &-course-icons {
+    background-color: $ci-blue-darker;
+    margin: auto;
+    height: 10vh;
+  }
+
+  &-home {
+    .ci-carousel {
+      height: 75vh;
+    }
+
+    background: url('/img/photos/background.png') no-repeat;
+    background-size: cover;
+    height: 80vh;               /* Using relative units for cover 90% of the screen */
+  }
+
   &-section {
     &.ci-cursos {
       background-color: $ci-gray-light;
