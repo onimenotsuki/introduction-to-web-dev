@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const engine = require('consolidate');
 const index = require('./routes/index');
-const privacy = require('./routes/privacy');
+const privacy = require('./routes/privacy');
 
 const app = express();
 
