@@ -7,3 +7,30 @@
 .main-container {
   margin-top: 40px;
 }
+
+/* Typography */
+.ci {
+  &-paragraph {
+    color: $ci-blue-medium;
+    font-size: 0.8em;
+  }
+
+  &-section-title {
+    color: $ci-blue-dark;
+  }
+}
+
+/* .ci-paragraph { */
+/*   color: $ci-blue-medium; */
+/*   font-size: 0.8em; */
+/* } */
+
+/* .ci-section-title { */
+/*   color: $ci-blue-dark; */
+/* } */
+
+/* Images */
+.ci-img-reponsive {
+  margin: auto;
+  text-align: center;
+}
