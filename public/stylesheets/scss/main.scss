@@ -8,6 +8,18 @@
   margin-top: 40px;
 }
 
+/* Custom elements and misc */
+.ci-bar {
+  display: inline-block;
+  content: " ";
+  width: 10px;
+  height: 60px;
+}
+
+.ci-blue {
+  background-color: $ci-blue;
+}
+
 /* Typography */
 .ci {
   &-paragraph {
@@ -26,6 +38,17 @@
       color: $ci-blue;
     }
     color: $ci-blue-darker;
+  }
+}
+
+/* Sections and layout */
+.ci {
+  &-section {
+    &.ci-cursos {
+      background-color: $ci-gray-light;
+    }
+
+    padding: 60px 0;
   }
 }
 
