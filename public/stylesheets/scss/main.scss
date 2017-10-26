@@ -9,25 +9,41 @@
 }
 
 /* Custom elements and misc */
-.ci-bar {
-  display: inline-block;
-  content: " ";
-  width: 10px;
-  height: 60px;
-}
-
-.ci-blue {
-  background-color: $ci-blue;
+.ci {
+  &-bar {
+    display: inline-block;
+    content: " ";
+    width: 10px;
+    height: 60px;
+  }
+  &-blue {
+    &-dark {
+      background-color: $ci-blue-darker;
+    }
+    background-color: $ci-blue;
+  }
 }
 
 /* Typography */
 .ci {
   &-paragraph {
+    /* Utilizamos la función at-root de sass para mapear el elemento */
+    /* .ci-paragraph como hijo de .ci-section.ci-info */
+    @at-root .ci-section.ci-info #{&} {
+    color: white;
+  }
+
     color: $ci-gray-blue;
     font-size: 0.9em;
   }
 
   &-section-title {
+    /* Utilizamos la función at-root de sass para mapear el elemento */
+    /* .ci-section-title como hijo de .ci-section.ci-info */
+    @at-root .ci-section.ci-info #{&} {
+    color: white;
+  }
+
     color: $ci-blue-dark;
   }
 
@@ -48,12 +64,27 @@
       background-color: $ci-gray-light;
     }
 
-    padding: 60px 0;
+    &.ci-info {
+      background-color: $ci-blue-medium;
+    }
+
+    padding: 40px 0;
   }
 }
 
 /* Images */
-.ci-img-reponsive {
-  min-width: 100px !important;
-  max-height: 100px !important;
+.ci {
+  &-img-info {
+    width: 200px !important;
+  }
+
+  &-img-reponsive {
+    min-width: 100px !important;
+    max-height: 100px !important;
+  }
+}
+
+/* Buttons */
+.ci-btn-wrapper {
+  text-align: center;
 }
