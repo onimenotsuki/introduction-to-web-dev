@@ -7,8 +7,26 @@ const bodyParser = require('body-parser');
 const engine = require('consolidate');
 const index = require('./routes/index');
 const privacy = require('./routes/privacy');
+const mongoose = require('mongoose');
+const flash = require('connect-flash');
+const morgan = require('morgan');
+const session = require('express-session');
 
+// Dependencies for authentication and authorization
+const passport = require('passport');
+
+const configDB = require('./config/database');
+require('dotenv').config();     // Get ENV variables
 const app = express();
+
+// configuration
+let db = mongoose.connect(configDB.uri, { useMongoClient: true });
+
+app.use(morgan('dev'));         // logger
+app.use(cookieParser());        // read cookies (neede for auth)
+
+// Using passport configuration
+require('./config/passport')(passport);
 
 // Change view engine to nunjucks with consolidate
 app.engine('html', engine.nunjucks);
@@ -24,7 +42,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join('dist')));
+app.use(session({ secret: process.env.SECRET }));
+app.use(passport.initialize());
+app.use(passport.session());    // persistent login sessions
+app.use(flash());
 
+require('./routes/passport.js')(app, passport);
 app.use('/', index);
 app.use('/', privacy);
 

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block metaDescription %}
+<meta name="description" content="Registrate | Introducción al Desarrollo Web">
+{% endblock %}
+
+{% block content %}
+<section class="ci-section ci-home">
+  <div class="container">
+    <div class="row justify-content-center align-items-center mt-5">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4">
+
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Bienvenido</h4>
+            <p class="ci-paragraph">{{ user.local.email }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

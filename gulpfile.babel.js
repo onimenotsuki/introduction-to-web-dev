@@ -10,7 +10,7 @@ import nodemon from 'gulp-nodemon';
 import runSequence from 'run-sequence';
 
 // Constants
-const BROWSERSYNC_RELOAD_DELAY = 1000;
+const browserSyncReloadDelay = 1000;
 const bootstrapPath = './node_modules/bootstrap/scss/';
 const fontAwesomePath = './node_modules/font-awesome/scss/'
 const uikitPath = './node_modules/uikit/src/less/'

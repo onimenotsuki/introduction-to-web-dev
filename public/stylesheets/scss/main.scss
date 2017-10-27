@@ -294,6 +294,21 @@
 }
 
 /* Cards */
+.card-header {
+  &.ci-card-header-success {
+    background-color: $green;
+    color: $white;
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+
+  background-color: $ci-blue-darker;
+  color: $white;
+}
+
 .card-body {
   &:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -303,26 +318,39 @@
   transition: box-shadow 0.2s ease-in-out; /* Smooth animation for box-shadow property in cards */
 }
 
+
 /* Buttons */
+%ci-btn-default {
+  border-width: 3px;
+  padding: 8px 25px;
+  cursor: pointer;
+}
+
 .ci-btn {
   &.btn-primary {
     @include button-variant($ci-blue-darker, $ci-blue, transparent, $ci-blue-darker);
 
-    border-width: 3px;
-    padding: 8px 25px;
-    cursor: pointer;
+    @extend %ci-btn-default;
   }
 
   &.btn-dark {
     @include button-variant($ci-blue-darker, $ci-blue, $ci-blue, $ci-blue-darker);
 
-    border-width: 3px;
-    padding: 8px 25px;
-    cursor: pointer;
+    @extend %ci-btn-default;
+  }
+
+  &.btn-success {
+    @include button-variant($green, $ci-blue-darker, transparent, $green);
+
+    @extend %ci-btn-default;
   }
 }
 
 /* Forms */
+.form-group .form-control {
+  border: 3px solid $ci-gray-blue-light;
+}
+
 .form-control {
   padding: 8px 25px;
   border: 3px solid $white;
