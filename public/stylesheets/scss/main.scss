@@ -227,7 +227,6 @@
     font-size: 10px;
     color: $white;
   }
-  }
 
   &-icon-wrapper {
     display: block;
@@ -293,7 +292,6 @@
   }
 }
 
-
 /* Cards */
 .card-body {
   &:hover {
@@ -305,10 +303,22 @@
 }
 
 /* Buttons */
-*.ci-btn-primary {
-  @include button-variant($ci-blue-darker, $ci-blue, transparent, $ci-blue-darker);
+.btn {
+  &.ci-btn {
+    @at-root .btn-primary#{&} {
+    @include button-variant($ci-blue-darker, $ci-blue, transparent, $ci-blue-darker);
 
-  border-width: 3px;
-  padding: 8px 25px;
-  cursor: pointer;
+    border-width: 3px;
+    padding: 8px 25px;
+    cursor: pointer;
+  }
+
+    @at-root .btn-dark#{&} {
+      @include button-variant($ci-blue-darker, $ci-blue, $ci-blue, $ci-blue-darker);
+
+      border-width: 3px;
+      padding: 8px 25px;
+      cursor: pointer;
+    }
+  }
 }
