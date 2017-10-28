@@ -1,5 +1,7 @@
 'use strict';
 
+const md5 = require('md5');
+
 module.exports = (app, passport) => {
   // Login
   app.get('/login', (req, res) => {
@@ -11,8 +13,11 @@ module.exports = (app, passport) => {
   });
 
   app.get('/profile', isLoggedIn, (req, res) => {
+    let imgUrl = 'https://www.gravatar.com/avatar/';
+
     res.render('profile', {
-      user: req.user           // get the user out of session and pass to template
+      user: req.user,
+      srcImg: imgUrl + md5(req.user.local.email) + '?s=100'// get the user out of session and pass to template
     })
   })
 

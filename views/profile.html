@@ -8,12 +8,20 @@
 <section class="ci-section ci-home">
   <div class="container">
     <div class="row justify-content-center align-items-center mt-5">
+      <div class="img-wrapper">
+        <img class="ci-card-img m-auto"
+             src="{{ srcImg }}" alt="Card image cap">
+      </div>
+
       <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4">
 
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Bienvenido</h4>
-            <p class="ci-paragraph">{{ user.local.email }}</p>
+            <h5 class="card-title">Bienvenido</h5>
+
+            <h5><em>{{ user.local.email }}</em></h5>
+
+            <a class="btn btn-dark ci-btn" href="/logout">Cerrar Sesión</a>
           </div>
         </div>
       </div>
