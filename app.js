@@ -19,8 +19,13 @@ const configDB = require('./config/database');
 require('dotenv').config();     // Get ENV variables
 const app = express();
 
-// configuration
-let db = mongoose.connect(configDB.uri, { useMongoClient: true });
+// configuration of MongoDB
+mongoose.connect(configDB.uri, { useMongoClient: true });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function callback() {
+  console.log('Connection with database succeeded');
+});
 
 app.use(morgan('dev'));         // logger
 app.use(cookieParser());        // read cookies (neede for auth)

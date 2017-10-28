@@ -20,6 +20,11 @@
         <li class="nav-item">
           <a class="nav-link" href="">Temarios</a>
         </li>
+        {% if user %}
+        <li class="nav-item">
+          <a class="nav-link exit-link" href="/logout"><i class="fa fa-times-circle"></i> Salir</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </nav>

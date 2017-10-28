@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt-nodejs');
+const bcrypt = require('bcrypt');
 
 let userSchema = mongoose.Schema({
   local: {
@@ -14,14 +14,18 @@ let userSchema = mongoose.Schema({
   }
 });
 
-// Generating a hash
-userSchema.methods.generateHash = (password) => {
-  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
+// Generating a hash before save password
+userSchema.pre('save', (next) => {
+  if (this.password) {
+    this.password = this.generateHash(this.password);
+  }
+
+  next();
+});
+
+userSchema.methods.generateHash = (password) => bcrypt.hashSync(password, 10);
 
 // Checking if password is valid
-userSchema.methods.validPassword = (password) => {
-  return bcrypt.compareSync(password, this.local.password);
-};
+userSchema.methods.verifyPassword = (password, user_password) => bcrypt.compareSync(password, user_password);
 
 module.exports = mongoose.model('User', userSchema);

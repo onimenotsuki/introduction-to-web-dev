@@ -282,6 +282,11 @@
 
   .nav-item {
     &:hover > .nav-link {
+      &.exit-link {
+        color: $red;
+        border: none;
+      }
+
       border-bottom: 3px solid $white;
     }
 
@@ -353,6 +358,6 @@
 
 .form-control {
   padding: 8px 25px;
-  border: 3px solid $white;
+  border: 3px solid $gray-200;
   color: $ci-blue-darker;
 }

@@ -14,7 +14,7 @@ module.exports = (passport) => {
     });
   });
 
-  passport.use('local-signup', new LocalStrategy({
+  passport.use('signup', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true     // allows us to pass bach the entire request token
@@ -46,7 +46,7 @@ module.exports = (passport) => {
     });
   }));
 
-  passport.use('local-login', new LocalStrategy({
+  passport.use('login', new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
     passReqToCallback: true
@@ -59,11 +59,11 @@ module.exports = (passport) => {
         return done(null, false, req.flash('loginMessage', 'Algo anda mal, checa tu contraseña y correo.'));
       }
 
-      if (!user.validPassword(password)) {
+      if (!user.verifyPassword(password, user.local.password)) {
         return done(null, false, req.flash('loginMessage', 'Algo anda mal, checa tu contraseña y correo.'))
       }
 
       return done(null, user);
-    })
-  }))
+    });
+  }));
 };
