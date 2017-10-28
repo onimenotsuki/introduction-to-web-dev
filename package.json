@@ -1,11 +1,11 @@
 {
   "name": "intro-to-web",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.1",
   "scripts": {
     "start": "node ./bin/www",
     "server": "gulp"
   },
+  "author": "Edgar Talledos Robledos <onimenotsuki@gmai.com>",
   "dependencies": {
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",

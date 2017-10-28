@@ -29,3 +29,7 @@ MONGO_URI=mongodb://<database_uri>
 ## Verificando la instalación ##
 
 Una vez instaladas las dependencias puedes probar a correr el servidor: `npm run server` en <http://localhost:8080>.
+
+### Notas ###
+
+El proyecto todavía está en fase beta, se añadirá una rama extra para producción más adelante.
