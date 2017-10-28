@@ -17,6 +17,15 @@ Entra a la carpeta que se creó: `cd introduction-to-web`
 
 Instala las dependencias: `npm install` o `yarn install`
 
+### Agregando las variables de entorno ###
+
+Para que funcione correctamente el servidor es necesario añadir un archivo `.env` en la raíz del proyecto que debe contener lo siguiente:
+
+``` shell
+SECRET=ilovethissecret
+MONGO_URI=mongodb://<database_uri>
+```
+
 ## Verificando la instalación ##
 
 Una vez instaladas las dependencias puedes probar a correr el servidor: `npm run server` en <http://localhost:8080>.
